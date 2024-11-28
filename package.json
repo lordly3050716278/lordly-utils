@@ -1,0 +1,28 @@
+{
+  "name": "lordly-utils",
+  "version": "1.0.0",
+  "description": "Common JS和ES Module的工具库",
+  "main": "src/cjs/index.js",
+  "module": "src/esm/index.js",
+  "exports": {
+    "import": "./src/esm/index.js",
+    "require": "./src/cjs/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordly3050716278/lordly-utils.git"
+  },
+  "keywords": [
+    "lordly",
+    "utils"
+  ],
+  "author": "lordly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lordly3050716278/lordly-utils/issues"
+  },
+  "homepage": "https://github.com/lordly3050716278/lordly-utils#readme"
+}
