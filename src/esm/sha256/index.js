@@ -1,5 +1,5 @@
 /**
- * @author - lordly
+ * @author - lordly<lordly0426@163.com>
  * 
  * 计算给定数据的 SHA-256 哈希值（异步）
  * 
@@ -9,11 +9,6 @@
  * @param { string } data - 输入的字符串数据，可以是任意 UTF-8 编码的文本。
  * @returns { Promise<string> } 返回一个 Promise 对象，解析后的值是计算出的 SHA-256 哈希值，格式为 64 位的十六进制字符串。
  * 
- * @example
- * sha256('Hello, world!').then(hash => console.log(hash))  // 输出对应的 SHA-256 哈希值
- * 
- * @note
- * 该方法使用 `TextEncoder` 对输入的字符串进行 UTF-8 编码，并返回一个基于 Web Crypto API 的异步操作结果。
  */
 async function sha256(data) {
     // 默认 UTF-8 编码

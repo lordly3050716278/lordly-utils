@@ -1,7 +1,7 @@
 const crypto = require('crypto')
 
 /**
- * @author - lordly
+ * @author - lordly<lordly0426@163.com>
  * 
  * 计算给定数据的 SHA-256 哈希值
  * 
@@ -11,9 +11,6 @@ const crypto = require('crypto')
  * @param { string | Buffer } data - 输入的数据，可以是字符串或 Buffer 对象，表示要计算哈希值的数据。
  * @returns { string } 返回输入数据的 SHA-256 哈希值，格式为 64 位的十六进制字符串。
  * 
- * @example
- * const hash = sha256('Hello, world!')
- * console.log(hash)  // 输出对应的 SHA-256 哈希值
  */
 function sha256(data) {
     const hash = crypto.createHash('sha256')

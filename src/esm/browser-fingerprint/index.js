@@ -1,5 +1,7 @@
+import sha256 from '../sha256'
+
 /**
- * @author - lordly
+ * @author - lordly<lordly0426@163.com>
  * 
  * 获取浏览器指纹信息
  * 
@@ -14,15 +16,7 @@
  * - **Canvas 指纹**：通过在 Canvas 上绘制文本生成唯一的图像数据
  * - **WebGL 信息**：通过 WebGL 获取硬件渲染器和厂商信息
  *  
- * @returns { string } 返回一个 JSON 字符串，包含所有收集的浏览器指纹信息。
- * 
- * @example
- * const fingerprint = getBrowserFingerprint()
- * console.log(fingerprint)  // 输出包含浏览器指纹的 JSON 字符串
- * 
- * @note
- * - 该函数基于多种浏览器特征生成指纹，因此即使用户修改了浏览器设置，指纹也可能发生变化。
- * - 一些收集的指纹数据可能在不同的设备或浏览器中略有不同，因此其唯一性和准确性可能受到某些因素的影响。
+ * @returns { Promise<string> } 返回一个 hash 字符串，包含所有收集的浏览器指纹信息。
  */
 function getBrowserFingerprint() {
     // 获取用户代理字符串
@@ -76,7 +70,7 @@ function getBrowserFingerprint() {
     }
 
     // 合并所有指纹信息
-    return JSON.stringify({
+    return sha256(JSON.stringify({
         userAgent,
         screenWidth,
         screenHeight,
@@ -85,7 +79,7 @@ function getBrowserFingerprint() {
         fonts: detectFonts(),
         canvas: getCanvasFingerprint(),
         webGL: getWebGLFingerprint()
-    })
+    }))
 }
 
 export default getBrowserFingerprint
